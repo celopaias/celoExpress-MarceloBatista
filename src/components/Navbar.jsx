@@ -1,4 +1,7 @@
-export const NavBar = () => {
+import { useState } from 'react';
+import { CartWidget } from './CartWidget';
+
+export const NavBar = ({ cartNumber }) => {
   return (
     <div className="w-full bg-gray-900">
       <div className="container flex mx-auto">
@@ -38,7 +41,17 @@ export const NavBar = () => {
             </a>
           </li>
         </ul>
+
+        <CartWidget cartNumber={cartNumber} />
       </div>
+    </div>
+  );
+};
+
+export const ItemListContainer = () => {
+  return (
+    <div className="pt-40">
+      <h1 className="text-gray-900 text-lg text-center">Sejam bem-vindos</h1>
     </div>
   );
 };
