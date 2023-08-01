@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { CartWidget } from './CartWidget';
+import { CartWidget } from '../cartWidget/CartWidget';
 
 export const NavBar = ({ cartNumber }) => {
   return (
@@ -50,8 +49,8 @@ export const NavBar = ({ cartNumber }) => {
 
 export const ItemListContainer = () => {
   return (
-    <div className="pt-40">
-      <h1 className="text-gray-900 text-lg text-center">Sejam bem-vindos</h1>
+    <div className="pt-20">
+      <h1 className="mb-4 font-bold  text-gray-900 text-center">Produtos</h1>
     </div>
   );
 };
