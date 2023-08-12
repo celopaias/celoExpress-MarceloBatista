@@ -1,4 +1,5 @@
 import { CartWidget } from '../cartWidget/CartWidget';
+import ContainerItems from '../itemList/ContainerItems';
 
 export const NavBar = ({ cartNumber }) => {
   return (
@@ -51,6 +52,7 @@ export const ItemListContainer = () => {
   return (
     <div className="pt-20">
       <h1 className="mb-4 font-bold  text-gray-900 text-center">Produtos</h1>
+      <ContainerItems />
     </div>
   );
 };
