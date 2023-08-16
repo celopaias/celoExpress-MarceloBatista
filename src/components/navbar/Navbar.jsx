@@ -48,11 +48,11 @@ export const NavBar = ({ cartNumber }) => {
   );
 };
 
-export const ItemListContainer = () => {
+export const ItemListContainer = ({ setCartNumber }) => {
   return (
     <div className="pt-20">
       <h1 className="mb-4 font-bold  text-gray-900 text-center">Produtos</h1>
-      <ContainerItems />
+      <ContainerItems setCartNumber={setCartNumber} />
     </div>
   );
 };

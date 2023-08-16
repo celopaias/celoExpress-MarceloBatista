@@ -1,7 +1,7 @@
 import Item from './Item';
 
-const ContainerItems = () => {
-  return <Item />;
+const ContainerItems = (setCartNumber) => {
+  return <Item setCartNumber={setCartNumber} />;
 };
 
 export default ContainerItems;

@@ -4,12 +4,13 @@ import { ItemListContainer } from './components/navbar/Navbar';
 import { Hero } from './components/hero/Hero';
 
 function App() {
-  const [cartNumber, setCartNumber] = useState(5);
+  const [cartNumber, setCartNumber] = useState(0);
+  console.log(cartNumber);
   return (
     <>
       <NavBar cartNumber={cartNumber} />
       <Hero />
-      <ItemListContainer />
+      <ItemListContainer setCartNumber={setCartNumber} />
     </>
   );
 }
