@@ -1,7 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '../button/Button';
-export const ItemCount = ({ stock, id }) => {
+
+export const returnAddedItem = (number) => {
+  return number;
+};
+export const ItemCount = ({ stock, id, qtdSelected }) => {
   const [addItem, setAddItem] = useState(1);
+  returnAddedItem(addItem);
 
   const OnAdd = () => {
     alert(
@@ -10,6 +15,10 @@ export const ItemCount = ({ stock, id }) => {
         : 'Foram adicionados ' + addItem + ' itens em seu carrinho'
     );
   };
+
+  useEffect(() => {
+    qtdSelected(addItem);
+  }, [OnAdd]);
   return (
     <>
       <div className="flex justify-between px-3">
@@ -39,13 +48,6 @@ export const ItemCount = ({ stock, id }) => {
         <div>
           <span className="flex text-gray-900">Qtd: {stock}</span>
         </div>
-      </div>
-      <div className="flex justify-center align-middle mt-7">
-        <Button
-          disabled={stock === 0 ? true : false}
-          value={stock === 0 ? 'Não possui estoque' : 'Adicionar ao Carrinho'}
-          action={OnAdd}
-        />
       </div>
     </>
   );

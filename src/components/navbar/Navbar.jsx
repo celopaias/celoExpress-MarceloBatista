@@ -48,11 +48,15 @@ export const NavBar = ({ cartNumber }) => {
   );
 };
 
-export const ItemListContainer = ({ setCartNumber }) => {
+export const ItemListContainer = ({ data, setCartNumber }) => {
+  console.log(data);
   return (
     <div className="pt-20">
       <h1 className="mb-4 font-bold  text-gray-900 text-center">Produtos</h1>
-      <ContainerItems setCartNumber={setCartNumber} />
+      <ContainerItems
+        data={data}
+        setCartNumber={setCartNumber}
+      />
     </div>
   );
 };
