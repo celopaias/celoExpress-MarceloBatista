@@ -1,16 +1,17 @@
 import { useState } from 'react';
-import { Data } from '../../data/Data';
 import { ItemCount } from '../ItemCount/ItemCount';
 import ItemDetail from './ItemDetail';
 import { NavLink } from 'react-router-dom';
 import { Button } from '../button/Button';
+import { useContext } from 'react';
+import CartContext from '../../contexts/CartContext';
 
-const Item = ({ data, setCartNumber }) => {
-  const list = data;
+const Item = () => {
+  const { Data } = useContext(CartContext);
   return (
     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-        {list.map((item, key) => {
+        {Data.map((item, key) => {
           return (
             <a
               className="group"

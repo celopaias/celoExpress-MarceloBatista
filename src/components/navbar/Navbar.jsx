@@ -1,7 +1,7 @@
 import { CartWidget } from '../cartWidget/CartWidget';
 import ContainerItems from '../itemList/ContainerItems';
 
-export const NavBar = ({ cartNumber }) => {
+export const NavBar = () => {
   return (
     <div className="w-full bg-gray-900">
       <div className="container flex mx-auto">
@@ -42,21 +42,17 @@ export const NavBar = ({ cartNumber }) => {
           </li>
         </ul>
 
-        <CartWidget cartNumber={cartNumber} />
+        <CartWidget />
       </div>
     </div>
   );
 };
 
-export const ItemListContainer = ({ data, setCartNumber }) => {
-  console.log(data);
+export const ItemListContainer = () => {
   return (
     <div className="pt-20">
       <h1 className="mb-4 font-bold  text-gray-900 text-center">Produtos</h1>
-      <ContainerItems
-        data={data}
-        setCartNumber={setCartNumber}
-      />
+      <ContainerItems />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { ItemCount } from '../ItemCount/ItemCount';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Data } from '../../data/Data';
 import { Button } from '../button/Button';
 import CartContext from '../../contexts/CartContext';
@@ -13,19 +13,21 @@ const ItemDetail = ({ data }) => {
     setIdProductSelect,
     setQtdSelected,
     qtdSelected,
+    Data,
   } = useContext(CartContext);
 
   useEffect(() => {
-    console.log(id);
     setIdProductSelect(id.id);
-    console.log(IdproductSelect);
   }, [id]);
   return (
     <>
       {Data.filter((product) => product.id === Number(IdproductSelect)).map(
         (item) => (
           <>
-            <div className="container mx-auto">
+            <div
+              key={item.id}
+              className="container mx-auto"
+            >
               <div className="container px-5 py-24 mx-auto">
                 <div className="lg:w-4/5 mx-auto flex items-center flex-wrap justify-center">
                   <img
@@ -53,13 +55,15 @@ const ItemDetail = ({ data }) => {
                       />
                     </div>
                     <div>
-                      <Button
-                        disabled={item.stock === 0 && true}
-                        value="Comprar"
-                        action={() => {
-                          addItem(item);
-                        }}
-                      />
+                      <Link to="/cart">
+                        <Button
+                          disabled={item.stock === 0 && true}
+                          value="Comprar"
+                          action={() => {
+                            addItem(item, qtdSelected);
+                          }}
+                        />
+                      </Link>
                     </div>
                   </div>
                 </div>

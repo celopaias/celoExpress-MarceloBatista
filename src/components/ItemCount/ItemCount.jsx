@@ -46,7 +46,9 @@ export const ItemCount = ({ stock, id, qtdSelected }) => {
         </div>
 
         <div>
-          <span className="flex text-gray-900">Qtd: {stock}</span>
+          <span className="flex text-gray-900 pl-4">
+            Quantidade no Estoque: {stock}
+          </span>
         </div>
       </div>
     </>

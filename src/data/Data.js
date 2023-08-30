@@ -5,7 +5,7 @@ export const Data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel velit metus. Proin ultrices leo turpis, eget tempus nulla luctus accumsan. Donec ultricies massa in diam tincidunt vehicula sit amet et magna. Aenean vel rutrum ipsum. Vestibulum non mauris vel mauris ultrices tincidunt. Morbi non augue vel lacus mollis ultricies. In vel augue a ligula tempor tincidunt. Maecenas dignissim leo nec interdum tincidunt.  ',
     pictureURL: 'https://dummyimage.com/280/ccc/000000',
-    price: '48,00',
+    price: 48.0,
     stock: 5,
   },
 
@@ -15,7 +15,7 @@ export const Data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel velit metus. Proin ultrices leo turpis, eget tempus nulla luctus accumsan. Donec ultricies massa in diam tincidunt vehicula sit amet et magna. Aenean vel rutrum ipsum. Vestibulum non mauris vel mauris ultrices tincidunt. Morbi non augue vel lacus mollis ultricies. In vel augue a ligula tempor tincidunt. Maecenas dignissim leo nec interdum tincidunt.  ',
     pictureURL: 'https://dummyimage.com/280/ccc/000000',
-    price: '95,99',
+    price: 95.99,
     stock: 0,
   },
   {
@@ -24,7 +24,7 @@ export const Data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel velit metus. Proin ultrices leo turpis, eget tempus nulla luctus accumsan. Donec ultricies massa in diam tincidunt vehicula sit amet et magna. Aenean vel rutrum ipsum. Vestibulum non mauris vel mauris ultrices tincidunt. Morbi non augue vel lacus mollis ultricies. In vel augue a ligula tempor tincidunt. Maecenas dignissim leo nec interdum tincidunt.  ',
     pictureURL: 'https://dummyimage.com/280/ccc/000000',
-    price: '95,99',
+    price: 95.99,
     stock: 2,
   },
   {
@@ -33,7 +33,7 @@ export const Data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel velit metus. Proin ultrices leo turpis, eget tempus nulla luctus accumsan. Donec ultricies massa in diam tincidunt vehicula sit amet et magna. Aenean vel rutrum ipsum. Vestibulum non mauris vel mauris ultrices tincidunt. Morbi non augue vel lacus mollis ultricies. In vel augue a ligula tempor tincidunt. Maecenas dignissim leo nec interdum tincidunt.  ',
     pictureURL: 'https://dummyimage.com/280/ccc/000000',
-    price: '32,49',
+    price: 32.49,
     stock: 0,
   },
   {
@@ -42,7 +42,7 @@ export const Data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel velit metus. Proin ultrices leo turpis, eget tempus nulla luctus accumsan. Donec ultricies massa in diam tincidunt vehicula sit amet et magna. Aenean vel rutrum ipsum. Vestibulum non mauris vel mauris ultrices tincidunt. Morbi non augue vel lacus mollis ultricies. In vel augue a ligula tempor tincidunt. Maecenas dignissim leo nec interdum tincidunt.  ',
     pictureURL: 'https://dummyimage.com/280/ccc/000000',
-    price: '1250,00',
+    price: 1250.0,
     stock: 12,
   },
   {
@@ -51,7 +51,7 @@ export const Data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel velit metus. Proin ultrices leo turpis, eget tempus nulla luctus accumsan. Donec ultricies massa in diam tincidunt vehicula sit amet et magna. Aenean vel rutrum ipsum. Vestibulum non mauris vel mauris ultrices tincidunt. Morbi non augue vel lacus mollis ultricies. In vel augue a ligula tempor tincidunt. Maecenas dignissim leo nec interdum tincidunt.  ',
     pictureURL: 'https://dummyimage.com/280/ccc/000000',
-    price: '45,50',
+    price: 45.5,
     stock: 10,
   },
   {
@@ -60,7 +60,7 @@ export const Data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel velit metus. Proin ultrices leo turpis, eget tempus nulla luctus accumsan. Donec ultricies massa in diam tincidunt vehicula sit amet et magna. Aenean vel rutrum ipsum. Vestibulum non mauris vel mauris ultrices tincidunt. Morbi non augue vel lacus mollis ultricies. In vel augue a ligula tempor tincidunt. Maecenas dignissim leo nec interdum tincidunt.  ',
     pictureURL: 'https://dummyimage.com/280/ccc/000000',
-    price: '23,99',
+    price: 23.99,
     stock: 25,
   },
 
@@ -70,7 +70,7 @@ export const Data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel velit metus. Proin ultrices leo turpis, eget tempus nulla luctus accumsan. Donec ultricies massa in diam tincidunt vehicula sit amet et magna. Aenean vel rutrum ipsum. Vestibulum non mauris vel mauris ultrices tincidunt. Morbi non augue vel lacus mollis ultricies. In vel augue a ligula tempor tincidunt. Maecenas dignissim leo nec interdum tincidunt.  ',
     pictureURL: 'https://dummyimage.com/280/ccc/000000',
-    price: '10,00',
+    price: 10.0,
     stock: 0,
   },
 ];
