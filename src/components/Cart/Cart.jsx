@@ -62,7 +62,7 @@ export const Cart = () => {
                           Quantidade comprada: {item.qtd}
                         </span>
                         <ItemCount
-                          stock={item.stock}
+                          stock={item.qtd}
                           id={item.id}
                           qtdSelected={setQtdSelected}
                         />

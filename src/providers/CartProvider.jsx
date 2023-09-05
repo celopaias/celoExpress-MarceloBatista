@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import CartContext from '../contexts/CartContext';
 import { useParams } from 'react-router-dom';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { Data } from '../data/Data';
 export default function CartProvider({ children }) {
   const [qtdSelected, setQtdSelected] = useState();
+  const [products, setProducts] = useState([]);
   const [qtdStock, setQtdStock] = useState();
   const [dataItemBuy, setDataItemBuy] = useState(
     JSON.parse(localStorage.getItem('cart') || '[]')
@@ -12,6 +14,19 @@ export default function CartProvider({ children }) {
   const [finalPrice, setFinalPrice] = useState();
   const [controler, setControler] = useState();
   const [qtdCart, setQtdCart] = useState();
+
+  useEffect(() => {
+    const db = getFirestore();
+    const productss = collection(db, 'products');
+    getDocs(productss).then((result) =>
+      setProducts(
+        result.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }))
+      )
+    );
+  });
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(dataItemBuy));
@@ -84,6 +99,7 @@ export default function CartProvider({ children }) {
         finalPrice,
         clearCart,
         qtdCart,
+        products,
         Data,
         removeSelectedCart,
         endingCart,

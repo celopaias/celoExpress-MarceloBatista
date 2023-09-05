@@ -14,15 +14,18 @@ const ItemDetail = ({ data }) => {
     setQtdSelected,
     qtdSelected,
     Data,
+    products,
   } = useContext(CartContext);
 
   useEffect(() => {
     setIdProductSelect(id.id);
+    console.log(IdproductSelect);
   }, [id]);
   return (
     <>
-      {Data.filter((product) => product.id === Number(IdproductSelect)).map(
-        (item) => (
+      {products
+        .filter((product) => product.id === IdproductSelect)
+        .map((item) => (
           <>
             <div
               key={item.id}
@@ -49,7 +52,7 @@ const ItemDetail = ({ data }) => {
                     </div>
                     <div className="my-4">
                       <ItemCount
-                        stock={item.stock}
+                        stock={item.qtd}
                         id={item.id}
                         qtdSelected={setQtdSelected}
                       />
@@ -57,7 +60,7 @@ const ItemDetail = ({ data }) => {
                     <div>
                       <Link to="/cart">
                         <Button
-                          disabled={item.stock === 0 && true}
+                          disabled={item.qtd === 0 && true}
                           value="Comprar"
                           action={() => {
                             addItem(item, qtdSelected);
@@ -70,8 +73,7 @@ const ItemDetail = ({ data }) => {
               </div>
             </div>
           </>
-        )
-      )}
+        ))}
     </>
   );
 };

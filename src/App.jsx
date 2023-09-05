@@ -10,16 +10,16 @@ import { Cart } from './components/Cart/Cart';
 function App() {
   return (
     <CartProvider>
-      <NavBar />
-      <Hero />
       <BrowserRouter>
+        <NavBar />
+        <Hero />
         <Routes>
           <Route
             path="/"
             element={<ItemListContainer />}
           />
           <Route
-            path="/category"
+            path="/category/:categoryId"
             element={<ItemListContainer />}
           />
           <Route
