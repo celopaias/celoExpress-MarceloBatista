@@ -1,9 +1,13 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CartContext from '../../contexts/CartContext';
 import { Link } from 'react-router-dom';
 import { ItemCount } from '../ItemCount/ItemCount';
 import { Button } from '../button/Button';
+import { FormInfo } from '../info/formInfo';
+
 export const Cart = () => {
+  const [showModalFormInfo, setShowModalFormInfo] = useState(false);
+
   const {
     addItem,
     IdproductSelect,
@@ -14,7 +18,6 @@ export const Cart = () => {
     finalPrice,
     clearCart,
     removeSelectedCart,
-    endingCart,
   } = useContext(CartContext);
 
   return (
@@ -112,7 +115,7 @@ export const Cart = () => {
               ''
             )}
             <span className="text-gray-600 font-bold text-2xl mr-4">
-              Subtotal: R$ {finalPrice.toFixed(2)}
+              Subtotal: R$ {finalPrice + ',00'}
             </span>
             <div> </div>
           </div>
@@ -121,12 +124,14 @@ export const Cart = () => {
         )}
         <div className="mt-20">
           {Object.keys(dataItemBuy).length !== 0 ? (
-            <Button
-              value="Finalizar compra"
-              action={() => {
-                endingCart();
-              }}
-            />
+            <Link to={'/formInfo'}>
+              <Button
+                value="Finalizar compra"
+                action={() => {
+                  setShowModalFormInfo(true);
+                }}
+              />
+            </Link>
           ) : (
             ''
           )}

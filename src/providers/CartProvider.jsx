@@ -26,7 +26,8 @@ export default function CartProvider({ children }) {
         }))
       )
     );
-  });
+    console.log(products);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(dataItemBuy));
@@ -34,7 +35,6 @@ export default function CartProvider({ children }) {
 
   useEffect(() => {
     setQtdCart(dataItemBuy.length);
-    console.log(qtdCart);
   });
   useEffect(() => {
     const result = JSON.parse(localStorage.getItem('cart') || '[]').reduce(
@@ -42,7 +42,7 @@ export default function CartProvider({ children }) {
       0
     );
     setFinalPrice(result);
-  }, [dataItemBuy]);
+  });
   const clearCart = () => {
     localStorage.removeItem('cart');
     window.location.reload(false);
@@ -54,9 +54,6 @@ export default function CartProvider({ children }) {
     localStorage.setItem('cart', JSON.stringify(newElement));
     window.location.reload(false);
   };
-  const endingCart = () => {
-    alert('Em breve');
-  };
 
   const addItem = (item, qtd) => {
     const selectedItem = {
@@ -67,6 +64,8 @@ export default function CartProvider({ children }) {
       url: item.pictureURL,
       qtd: qtd,
       stock: item.stock - qtd,
+      data: new Date().toLocaleString() + '',
+      totalPrice: finalPrice,
     };
 
     if (localStorage.getItem('cart') === null) {
@@ -102,7 +101,6 @@ export default function CartProvider({ children }) {
         products,
         Data,
         removeSelectedCart,
-        endingCart,
         qtdStock,
       }}
     >
