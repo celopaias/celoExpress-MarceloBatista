@@ -3,17 +3,12 @@ import CartContext from '../../contexts/CartContext';
 import { Link } from 'react-router-dom';
 import { ItemCount } from '../ItemCount/ItemCount';
 import { Button } from '../button/Button';
-import { FormInfo } from '../info/formInfo';
 
 export const Cart = () => {
   const [showModalFormInfo, setShowModalFormInfo] = useState(false);
 
   const {
-    addItem,
-    IdproductSelect,
-    setIdProductSelect,
     setQtdSelected,
-    qtdSelected,
     dataItemBuy,
     finalPrice,
     clearCart,

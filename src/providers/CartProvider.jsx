@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import CartContext from '../contexts/CartContext';
-import { useParams } from 'react-router-dom';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { Data } from '../data/Data';
 export default function CartProvider({ children }) {

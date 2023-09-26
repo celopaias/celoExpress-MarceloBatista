@@ -1,6 +1,6 @@
 import { CartWidget } from '../cartWidget/CartWidget';
 import ContainerItems from '../itemList/ContainerItems';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import CartContext from '../../contexts/CartContext';
 import { NavLink } from 'react-router-dom';
 
@@ -52,7 +52,6 @@ export const NavBar = () => {
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="menu-button"
-              tabindex="-1"
             >
               <div
                 className="py-1"
