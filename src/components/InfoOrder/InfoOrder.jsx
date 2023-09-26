@@ -32,7 +32,7 @@ export const InfoOrder = () => {
 
   return (
     <>
-      {/* <div className="relative container m-auto overflow-x-auto content-main">
+      <div className="relative container m-auto overflow-x-auto content-main">
         <h1 className="text-3xl text-gray-900 font-bold my-4">
           Parabéns, agora é só esperar pela sua compra!
         </h1>
@@ -122,7 +122,7 @@ export const InfoOrder = () => {
               })}
           </tbody>
         </table>
-      </div> */}
+      </div>
     </>
   );
 };
