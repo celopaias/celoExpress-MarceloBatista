@@ -8,7 +8,7 @@ import { Cart } from './components/Cart/Cart';
 
 import { InfoOrder } from './components/InfoOrder/InfoOrder';
 import { Footer } from './components/footer/Footer';
-import { FormInfo } from './components/info/formInfo';
+import { FormInfo } from './components/info/FormInfo';
 
 function App() {
   return (
@@ -30,6 +30,10 @@ function App() {
             element={<ItemDetail />}
           />
 
+          <Route
+            path="/formInfo"
+            element={<FormInfo />}
+          />
           <Route
             path="/cart"
             element={<Cart />}
