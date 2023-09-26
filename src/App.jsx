@@ -31,10 +31,6 @@ function App() {
           />
 
           <Route
-            path="/formInfo"
-            element={<FormInfo />}
-          />
-          <Route
             path="/cart"
             element={<Cart />}
           />
