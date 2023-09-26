@@ -1,8 +1,10 @@
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
+import CartContext from '../../contexts/CartContext';
 
 export const InfoOrder = () => {
+  const { clearCart, qtdCart } = useContext(CartContext);
   const [buyedItem, setBuyedItem] = useState();
   const [buyerPerson, setBuyerPerson] = useState();
 
@@ -14,6 +16,9 @@ export const InfoOrder = () => {
   });
 
   useEffect(() => {
+    if (qtdCart > 0) {
+      clearCart();
+    }
     const db = getFirestore();
     const product = doc(db, 'orders', userId);
     getDoc(product).then((result) => {
@@ -27,7 +32,7 @@ export const InfoOrder = () => {
 
   return (
     <>
-      <div className="relative container m-auto overflow-x-auto">
+      <div className="relative container m-auto overflow-x-auto content-main">
         <h1 className="text-3xl text-gray-900 font-bold my-4">
           Parabéns, agora é só esperar pela sua compra!
         </h1>
@@ -81,6 +86,7 @@ export const InfoOrder = () => {
               <th
                 scope="col"
                 className="px-6 py-3"
+                width="50%"
               >
                 Descrição
               </th>
@@ -110,7 +116,7 @@ export const InfoOrder = () => {
                     <td className="px-6 py-3">{item.title}</td>
                     <td className="px-6 py-3">{item.description}</td>
                     <td className="px-6 py-3 text-center">{item.qtd}</td>
-                    <td className="px-6 py-3">{item.price}</td>
+                    <td className="px-6 py-3">R$ {item.price},00</td>
                   </tr>
                 );
               })}

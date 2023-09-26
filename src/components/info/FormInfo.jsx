@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import { collection, getFirestore, addDoc } from 'firebase/firestore';
 
 export const FormInfo = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
   const navigate = useNavigate();
   const sendToBd = () => {
     const db = getFirestore();
@@ -35,7 +38,7 @@ export const FormInfo = () => {
   const [email, setEmail] = useState('');
   const [telephone, setTelephone] = useState('');
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 content-main">
       <div className="grid grid-cols-2 gap-40 mt-5">
         <div>
           <div className="float-leftmb-30">
@@ -47,13 +50,18 @@ export const FormInfo = () => {
             </p>
           </div>
 
-          <form className="w-full">
+          <form
+            className="w-full"
+            onSubmit={onSubmit}
+            noValidate
+          >
             <div className="flex flex-wrap mb-6 pt-30">
               <div className="w-full mt-10">
                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                   Nome
                 </label>
                 <input
+                  required={true}
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   type="text"
                   onChange={(e) => {
@@ -68,8 +76,9 @@ export const FormInfo = () => {
                   E-mail
                 </label>
                 <input
+                  required={true}
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                  type="text"
+                  type="email"
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
@@ -80,6 +89,7 @@ export const FormInfo = () => {
                   Telefone
                 </label>
                 <input
+                  required={true}
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   type="number"
                   onChange={(e) => {

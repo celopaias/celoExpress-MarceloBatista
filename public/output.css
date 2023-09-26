@@ -33,12 +33,10 @@
 .action-cart {
   cursor: pointer;
 }
-
-footer {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
+.content-main {
+  min-height: 700px;
 }
+
 /*
 1. Use a consistent sensible line-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.

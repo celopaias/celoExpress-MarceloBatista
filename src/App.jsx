@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { NavBar } from './components/navbar/Navbar';
 import { ItemListContainer } from './components/navbar/Navbar';
 import { Hero } from './components/hero/Hero';
@@ -5,10 +6,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemDetail from './components/itemList/ItemDetail';
 import CartProvider from './providers/CartProvider';
 import { Cart } from './components/Cart/Cart';
-
+import { FormInfo } from './components/info/FormInfo';
 import { InfoOrder } from './components/InfoOrder/InfoOrder';
 import { Footer } from './components/footer/Footer';
-import { FormInfo } from './components/info/FormInfo';
 
 function App() {
   return (

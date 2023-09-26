@@ -29,7 +29,7 @@ const ItemDetail = ({ data }) => {
           <>
             <div
               key={item.id}
-              className="container mx-auto"
+              className="container mx-auto content-main"
             >
               <div className="container px-5 py-24 mx-auto">
                 <div className="lg:w-4/5 mx-auto flex items-center flex-wrap justify-center">

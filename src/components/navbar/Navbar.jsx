@@ -92,7 +92,7 @@ export const NavBar = () => {
 
 export const ItemListContainer = () => {
   return (
-    <div className="pt-20">
+    <div className="pt-20 content-main">
       <h1 className="mb-4 font-bold  text-gray-900 text-center">Produtos</h1>
       <ContainerItems />
     </div>

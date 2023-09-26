@@ -8,7 +8,11 @@ export const Cart = () => {
   const [showModalFormInfo, setShowModalFormInfo] = useState(false);
 
   const {
+    addItem,
+    IdproductSelect,
+    setIdProductSelect,
     setQtdSelected,
+    qtdSelected,
     dataItemBuy,
     finalPrice,
     clearCart,
@@ -17,7 +21,7 @@ export const Cart = () => {
 
   return (
     <>
-      <div className="container mx-auto px-4 py-8 main">
+      <div className="container mx-auto px-4 py-8 content-main">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center">
           <h1 className="text-3xl text-gray-900 font-bold my-4">
             Carrinho de compras
