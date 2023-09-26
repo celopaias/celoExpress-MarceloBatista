@@ -18,18 +18,15 @@ export const FormInfo = ({ action }) => {
     const db = getFirestore();
     const dbCollection = collection(db, 'orders');
     const order = {
-      buyer: [
-        {
-          name: name,
-          phone: telephone,
-          email: email,
-        },
-      ],
-      items: [
-        {
-          ...dataItemBuy,
-        },
-      ],
+      buyer: {
+        name: name,
+        phone: telephone,
+        email: email,
+      },
+
+      items: {
+        ...dataItemBuy,
+      },
     };
     addDoc(dbCollection, order).then(({ id }) => {
       console.log(id);

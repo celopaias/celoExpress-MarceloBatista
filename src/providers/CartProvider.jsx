@@ -83,7 +83,7 @@ export default function CartProvider({ children }) {
       console.log('já existe');
       return;
     } else {
-      setDataItemBuy([...dataItemBuy, selectedItem]);
+      setDataItemBuy([selectedItem, ...dataItemBuy]);
     }
   };
   return (

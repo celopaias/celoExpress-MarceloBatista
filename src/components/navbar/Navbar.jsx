@@ -12,7 +12,7 @@ export const NavBar = () => {
   return (
     <div className="w-full bg-gray-900">
       <div className="container flex mx-auto">
-        <h1 className="text-xl pr-5 py-5">Celo Express</h1>
+        <h1 className="text-xl pr-5 py-5">Lama Express</h1>
         <ul className=" container flex mx-auto py-5 w-auto">
           <li>
             <NavLink
