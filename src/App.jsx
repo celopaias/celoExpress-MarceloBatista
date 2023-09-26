@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { NavBar } from './components/navbar/Navbar';
 import { ItemListContainer } from './components/navbar/Navbar';
 import { Hero } from './components/hero/Hero';
