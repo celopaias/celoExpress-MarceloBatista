@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemDetail from './components/itemList/ItemDetail';
 import CartProvider from './providers/CartProvider';
 import { Cart } from './components/Cart/Cart';
-import { FormInfo } from './components/info/formInfo';
 import { InfoOrder } from './components/InfoOrder/InfoOrder';
 import { Footer } from './components/footer/Footer';
 
@@ -29,10 +28,6 @@ function App() {
             element={<ItemDetail />}
           />
 
-          <Route
-            path="/formInfo"
-            element={<FormInfo />}
-          />
           <Route
             path="/cart"
             element={<Cart />}
