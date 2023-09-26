@@ -1,18 +1,11 @@
-import { useEffect, useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import CartContext from '../../contexts/CartContext';
 import { CartCheck } from '../Cart/CartCheck';
 import { Button } from '../button/Button';
 import { useNavigate } from 'react-router-dom';
-import {
-  collection,
-  getFirestore,
-  addDoc,
-  doc,
-  updateDoc,
-  writeBatch,
-} from 'firebase/firestore';
+import { collection, getFirestore, addDoc } from 'firebase/firestore';
 
-export const FormInfo = ({ action }) => {
+export const FormInfo = () => {
   const navigate = useNavigate();
   const sendToBd = () => {
     const db = getFirestore();
@@ -37,7 +30,7 @@ export const FormInfo = ({ action }) => {
       });
     });
   };
-  const { dataItemBuy, finalPrice } = useContext(CartContext);
+  const { dataItemBuy } = useContext(CartContext);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [telephone, setTelephone] = useState('');
