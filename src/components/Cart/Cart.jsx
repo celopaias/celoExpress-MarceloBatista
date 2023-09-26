@@ -3,7 +3,6 @@ import CartContext from '../../contexts/CartContext';
 import { Link } from 'react-router-dom';
 import { ItemCount } from '../ItemCount/ItemCount';
 import { Button } from '../button/Button';
-
 export const Cart = () => {
   const [showModalFormInfo, setShowModalFormInfo] = useState(false);
 
