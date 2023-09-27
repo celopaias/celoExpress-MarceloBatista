@@ -63,7 +63,7 @@ const ItemDetail = ({ data }) => {
                           disabled={item.qtd === 0 && true}
                           value="Comprar"
                           action={() => {
-                            addItem(item, qtdSelected);
+                            addItem(item, qtdSelected, IdproductSelect);
                           }}
                         />
                       </Link>

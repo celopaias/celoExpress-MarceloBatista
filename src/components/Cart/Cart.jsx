@@ -62,11 +62,6 @@ export const Cart = () => {
                         <span className="mr-2 text-gray-600">
                           Quantidade comprada: {item.qtd}
                         </span>
-                        <ItemCount
-                          stock={item.qtd}
-                          id={item.id}
-                          qtdSelected={setQtdSelected}
-                        />
                         <button
                           onClick={() => removeSelectedCart(item.id)}
                           className="bg-red-700 p-2 text-white ml-4"

@@ -1,19 +1,16 @@
-import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { useEffect, useState, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import CartContext from '../../contexts/CartContext';
 
 export const InfoOrder = () => {
-  const { clearCart, qtdCart } = useContext(CartContext);
+  const { clearCart, qtdCart, IdproductSelect } = useContext(CartContext);
   const [buyedItem, setBuyedItem] = useState();
   const [buyerPerson, setBuyerPerson] = useState();
+  const [idProducts, setIdProducts] = useState([]);
 
   const location = useLocation();
   let userId = location.state.userId;
-
-  useEffect(() => {
-    console.log(buyerPerson);
-  });
 
   useEffect(() => {
     if (qtdCart > 0) {
@@ -25,10 +22,23 @@ export const InfoOrder = () => {
       if (result.exists()) {
         setBuyerPerson(result.data().buyer);
         setBuyedItem(Object.values(result.data().items).map((item) => item));
-        console.log(result.data());
+        setIdProducts([
+          Object.values(result.data().items).map((item) => item.id),
+        ]);
       }
     });
   }, []);
+
+  useEffect(() => {
+    const db = getFirestore();
+    buyedItem &&
+      buyedItem.length > 0 &&
+      buyedItem.map((item) => {
+        const orderDoc = doc(db, 'products', item.id);
+        updateDoc(orderDoc, { qtd: item.stock });
+        console.log('Alterou ');
+      });
+  });
 
   return (
     <>

@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Button } from '../button/Button';
+import CartContext from '../../contexts/CartContext';
 
 export const returnAddedItem = (number) => {
   return number;
 };
 export const ItemCount = ({ stock, id, qtdSelected }) => {
+  const { setQtdStock } = useContext(CartContext);
   const [addItem, setAddItem] = useState(1);
   returnAddedItem(addItem);
 
@@ -15,6 +17,9 @@ export const ItemCount = ({ stock, id, qtdSelected }) => {
         : 'Foram adicionados ' + addItem + ' itens em seu carrinho'
     );
   };
+  useEffect(() => {
+    setQtdStock(stock);
+  });
 
   useEffect(() => {
     qtdSelected(addItem);

@@ -54,7 +54,7 @@ export default function CartProvider({ children }) {
     window.location.reload(false);
   };
 
-  const addItem = (item, qtd) => {
+  const addItem = (item, qtd, id) => {
     const selectedItem = {
       id: item.id,
       title: item.title,
@@ -62,10 +62,11 @@ export default function CartProvider({ children }) {
       price: item.price * qtd,
       url: item.pictureURL,
       qtd: qtd,
-      stock: item.stock - qtd,
+      stock: qtdStock - qtd,
       data: new Date().toLocaleString() + '',
       totalPrice: finalPrice,
     };
+    console.log(selectedItem);
 
     if (localStorage.getItem('cart') === null) {
       localStorage.setItem('cart', []);
@@ -101,6 +102,7 @@ export default function CartProvider({ children }) {
         Data,
         removeSelectedCart,
         qtdStock,
+        setQtdStock,
       }}
     >
       {children}
