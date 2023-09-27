@@ -35,7 +35,8 @@ export const InfoOrder = () => {
       buyedItem.length > 0 &&
       buyedItem.map((item) => {
         const orderDoc = doc(db, 'products', item.id);
-        updateDoc(orderDoc, { qtd: item.stock });
+        if (typeof item.stock === 'number')
+          updateDoc(orderDoc, { qtd: item.stock });
         console.log('Alterou ');
       });
   });
